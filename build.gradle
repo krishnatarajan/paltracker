@@ -1,0 +1,25 @@
+
+f plugins {
+    id 'application'
+    id 'java'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
+application {
+    mainClassName = 'io.pivotal.pal.tracker.PalTrackerApplication'
+}
+
+springBoot {
+    executable = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+
