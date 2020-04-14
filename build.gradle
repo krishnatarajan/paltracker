@@ -1,25 +1,40 @@
 
-f plugins {
+ plugins {
     id 'application'
     id 'java'
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
+ dependencies {
+     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+     implementation 'org.junit.jupiter:junit-jupiter'
+     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+     testImplementation('org.springframework.boot:spring-boot-starter-test') {
+         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+     }
+
+ }
+
+ bootRun.environment([
+         "WELCOME_MESSAGE": "hello",
+ ])
+
+ test.environment([
+         "WELCOME_MESSAGE": "Hello from test",
+ ])
+
+
 application {
     mainClassName = 'io.pivotal.pal.tracker.PalTrackerApplication'
-}
-
-springBoot {
-    executable = true
 }
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+test {
+    useJUnitPlatform()
 }
-
 
