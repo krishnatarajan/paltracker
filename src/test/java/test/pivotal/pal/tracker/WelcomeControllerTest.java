@@ -1,7 +1,9 @@
-package io.pivotal.pal.tracker;
+package test.pivotal.pal.tracker;
 
 
+import io.pivotal.pal.tracker.WelcomeController;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WelcomeControllerTest {
