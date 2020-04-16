@@ -14,5 +14,5 @@ public interface TimeEntryRepository {
 
     public void delete (long id);
 
-    public Collection<TimeEntry> list();
+    public List<TimeEntry> list();
 }

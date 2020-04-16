@@ -1,9 +1,6 @@
 package io.pivotal.pal.tracker;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
@@ -51,9 +48,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     }
 
     @Override
-    public Collection<TimeEntry> list() {
+    public List<TimeEntry> list() {
 
-        return inMemoryEntries.values();
+        return new ArrayList<>(inMemoryEntries.values());
     }
 
 
